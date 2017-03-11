@@ -1,3 +1,25 @@
+var transitionTable = [
+	["a","A"], 
+	["i","I"], 
+	["u","U"], 
+	["r","R","RR"], 
+	["l","lR","lRR"],
+	["e", "ai", "o", "au"],
+	["h","H"],
+	["M","n","N","J","G"],
+	["z","S","s"],
+	["b","v"],
+	["k","kh"],
+	["g","gh"],
+	["c","ch"],
+	["j","jh"],
+	["T","Th","t","th"], 
+	["D","Dh","d","dh"],
+	["p","ph"], 
+	["b","bh"],
+	["y","r","v"]
+]
+
 var searchList;
 
 function doVariant(pref, word) {
@@ -30,9 +52,10 @@ function doVariant(pref, word) {
 
     	if (isExist == true) {
     		cases.forEach(function(newChar) {
-    			searchList.push(pref + newChar + word.substring(varChar.length));
+    			var subWord = word.substring(varChar.length);
+    			searchList.push(pref + newChar + subWord);
     			if (word.length > 1) {
-    				doVariant(pref + newChar, word.substring(varChar.length));
+    				doVariant(pref + newChar, subWord);
     			}
 			});
     	}
@@ -57,35 +80,13 @@ function getChar(word) {
 	return newChar;
 }
 
-var transitionTable = [
-	["a","A"], 
-	["i","I"], 
-	["u","U"], 
-	["r","R","RR"], 
-	["l","lR","lRR"],
-	["e", "ai", "o", "au"],
-	["h","H"],
-	["M","n","N","J","G"],
-	["z","S","s"],
-	["b","v"],
-	["k","kh"],
-	["g","gh"],
-	["c","ch"],
-	["j","jh"],
-	["T","Th","t","th"], 
-	["D","Dh","d","dh"],
-	["p","ph"], 
-	["b","bh"],
-	["y","r","v"]
-]
-
 function getVariants(word){
 	searchList = [];	
-	console.log(word);
+	//console.log(word);
 
 	doVariant("",word);
 
-	console.log(searchList.toString());
+	//console.log(searchList.toString());
 
 	return searchList;
 }
