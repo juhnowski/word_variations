@@ -4,7 +4,6 @@ var transitionTable = [
 	["u","U"], 
 	["r","R","RR"], 
 	["l","lR","lRR"],
-	["e", "ai", "o", "au"],
 	["h","H"],
 	["M","n","N","J","G"],
 	["z","S","s"],
@@ -16,8 +15,7 @@ var transitionTable = [
 	["T","Th","t","th"], 
 	["D","Dh","d","dh"],
 	["p","ph"], 
-	["b","bh"],
-	["y","r","v"]
+	["b","bh"]
 ]
 
 var searchList;
