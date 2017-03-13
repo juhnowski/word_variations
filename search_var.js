@@ -15,7 +15,8 @@ var transitionTable = [
 	["T","Th","t","th"], 
 	["D","Dh","d","dh"],
 	["p","ph"], 
-	["b","bh"]
+	["b","bh"],
+	["sh","z"]
 ]
 
 var searchList;
